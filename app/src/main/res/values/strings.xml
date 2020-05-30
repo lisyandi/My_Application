@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Telegram Message App</string>
+    <string name="Contact">Contact and Group</string>
+    <string name="text1">Text 1</string>
+    <string name="text2">Text 2</string>
+    <string name="image">Image</string>
+
 </resources>
