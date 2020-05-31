@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactCreateActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/txt_contactId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact/Group ID"
+            android:inputType="text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"></EditText>
+
+
+        <EditText
+            android:id="@+id/txt_contactName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"></EditText>
+
+        <TextView
+            android:id="@+id/txt_contactType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type"
+            android:inputType="text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"></TextView>
+
+        <RadioGroup
+            android:id="@+id/rdgrp_type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            >
+            <RadioButton
+                android:id="@+id/rdb_Person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Person"
+                android:checked="true"
+                ></RadioButton>
+            <RadioButton
+                android:id="@+id/rdb_Group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Group"
+                android:checked="true"
+                ></RadioButton>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:padding="15dp"
+            android:text="Create"
+            android:textColor="#FFF"
+            android:textSize="20sp"></Button>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
