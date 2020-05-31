@@ -40,28 +40,26 @@
         android:id="@+id/btnSelectFile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="112dp"
         android:ems="7"
         android:text="Select File"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/image1"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/lblPath"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="82dp"
-        android:layout_marginLeft="82dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
         android:text="TextView"
         android:visibility="invisible"
-        app:layout_constraintEnd_toStartOf="@+id/image1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/editText2"
@@ -83,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="40dp"
         android:text="Text 1"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/editText1"
@@ -114,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:text="Image"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/image1"
@@ -138,21 +136,21 @@
 
     <ImageView
         android:id="@+id/image1"
-        android:layout_width="0dp"
-        android:layout_height="189dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblPath"
+        app:layout_constraintHorizontal_bias="0.872"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="222dp"
         android:layout_height="47dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:autofillHints=""
