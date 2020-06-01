@@ -46,7 +46,7 @@ import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
-    EditText contact, text1, text2;
+    EditText contact, text1;
     Button btnSend, btnClear, btnSelectFile, btnAddContact;
     ImageView image1;
     TextView lblPath;
@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
         contact = findViewById(R.id.actv10);
         text1 = findViewById(R.id.editText1);
-        text2 = findViewById(R.id.editText2);
 
         btnSend = findViewById(R.id.btnSend);
         btnClear = findViewById(R.id.btnClear);
@@ -117,9 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 String Contact = contact.getText().toString().trim();
                 if(!Contact.isEmpty()) {
                     String Text1 = text1.getText().toString().trim();
-                    String Text2 = text2.getText().toString().trim();
                     String LblPath = lblPath.getText().toString().trim();
-                    new myTask(Contact, Text1, Text2, LblPath).execute();
+                    new myTask(Contact, Text1, LblPath).execute();
                 }
                 else{
 
@@ -131,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 text1.setText("");
-                text2.setText("");
                 lblPath.setText("");
                 image1.setImageResource(android.R.color.transparent);
             }
@@ -146,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
 
     void ClearForm(Void res){
         text1.setText("");
-        text2.setText("");
         lblPath.setText("");
         image1.setImageResource(android.R.color.transparent);
     }
@@ -193,14 +189,13 @@ public class MainActivity extends AppCompatActivity {
 
         String Contact;
         String Text1;
-        String Text2;
+
         String LblPath;
 
-        myTask(String Contact, String Text1, String Text2, String LblPath) {
+        myTask(String Contact, String Text1, String LblPath) {
             // list all the parameters like in normal class define
             this.Contact = Contact;
             this.Text1 = Text1;
-            this.Text2 = Text2;
             this.LblPath = LblPath;
         }
 
@@ -220,11 +215,6 @@ public class MainActivity extends AppCompatActivity {
             if(!Text1.matches(""))
             {
                 url = String.format(urlString, apiToken, Contact, Text1);
-                SendTelegramText(url);
-            }
-            if(!Text2.matches(""))
-            {
-                url = String.format(urlString, apiToken, Contact, Text2);
                 SendTelegramText(url);
             }
             if(!LblPath.matches("")){
