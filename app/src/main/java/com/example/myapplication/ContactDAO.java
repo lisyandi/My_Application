@@ -12,9 +12,6 @@ import java.util.List;
 @Dao
 public interface ContactDAO {
 
-    @Query("SELECT * FROM Contact ORDER BY contact_name ASC")
-    public List<Contact> getAllContact();
-
     @Insert
     Long insertTask(Contact contact);
 
@@ -24,4 +21,9 @@ public interface ContactDAO {
     @Delete
     void deleteTask(Contact contact);
 
+//    @Query("SELECT * FROM Contact ORDER BY contact_name ASC")
+//    List<Contact> getAllContact();
+
+    @Query("SELECT * FROM Contact ORDER BY contact_name ASC")
+    LiveData<List<Contact>> getAllContact();
 }

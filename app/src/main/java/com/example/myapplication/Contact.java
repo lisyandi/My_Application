@@ -22,4 +22,12 @@ public class Contact {
         this.contact_name = contact_name;
         this.contact_type = contact_type;
     }
+
+    public String getContactName() {
+        return contact_name;
+    }
+
+    public String getContactId() {
+        return contact_id;
+    }
 }

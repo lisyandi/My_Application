@@ -7,22 +7,6 @@
     android:background="#b0b0b0"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editText0"
-        android:layout_width="219dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:text="1283417746"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btnSend"
         android:layout_width="151dp"
@@ -56,7 +40,6 @@
         android:id="@+id/lblPath"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:visibility="invisible"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -65,9 +48,9 @@
         android:id="@+id/editText2"
         android:layout_width="222dp"
         android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
@@ -138,11 +121,11 @@
         android:id="@+id/image1"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:background="#FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
@@ -150,16 +133,16 @@
         android:id="@+id/editText1"
         android:layout_width="222dp"
         android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:autofillHints=""
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateContact" />
 
     <TextView
         android:id="@+id/textView2"
@@ -170,8 +153,6 @@
         android:layout_marginTop="124dp"
         android:text="Contact / Group"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText0"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -179,11 +160,23 @@
         android:id="@+id/btnCreateContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Add Contact/Group"
-        app:layout_constraintBottom_toTopOf="@+id/editText0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.691" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actv10"
+        android:layout_width="220dp"
+        android:layout_height="44dp"
+        android:background="#FFFFFF"
+        android:completionThreshold="2"
+        app:layout_constraintBottom_toTopOf="@+id/editText1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateContact"
+        app:layout_constraintVertical_bias="0.545" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

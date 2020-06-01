@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Group"
-                android:checked="true"
+                android:checked="false"
                 ></RadioButton>
         </RadioGroup>
 
@@ -75,5 +75,17 @@
             android:textColor="#FFF"
             android:textSize="20sp"></Button>
 
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:padding="15dp"
+            android:text="Back To Main"
+            android:textColor="#FFF"
+            android:textSize="20sp"></Button>
+
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

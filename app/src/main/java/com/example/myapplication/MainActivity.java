@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -19,6 +21,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,13 +46,17 @@ import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
-EditText contact, text1, text2;
-Button btnSend, btnClear, btnSelectFile, btnAddContact;
-ImageView image1;
-TextView lblPath;
+    EditText contact, text1, text2;
+    Button btnSend, btnClear, btnSelectFile, btnAddContact;
+    ImageView image1;
+    TextView lblPath;
+    ArrayList<String> contactArrayList;
+    AutoCompleteTextView autoCompleteTextView;
 
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
+
+    private ContactViewModel contactViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +64,19 @@ TextView lblPath;
         setContentView(R.layout.activity_main);
 
         ContactRepository contactRepository = new ContactRepository(getApplicationContext());
+        contactViewModel = ViewModelProviders.of(this).get(ContactViewModel.class);
 
-        contact = findViewById(R.id.editText0);
+        autoCompleteTextView = findViewById(R.id.actv10);
+
+        contactViewModel.getAllContacts().observe(this, new Observer<List<Contact>>() {
+            @Override
+            public void onChanged(List<Contact> contactList) {
+                ContactAdapter adapter = new ContactAdapter(getApplicationContext(), contactList);
+                autoCompleteTextView.setAdapter(adapter);
+            }
+        });
+
+        contact = findViewById(R.id.actv10);
         text1 = findViewById(R.id.editText1);
         text2 = findViewById(R.id.editText2);
 
@@ -96,11 +114,16 @@ TextView lblPath;
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Contact = contact.getText().toString();
-                String Text1 = text1.getText().toString();
-                String Text2 = text2.getText().toString();
-                String LblPath = lblPath.getText().toString();
-                new myTask(Contact, Text1, Text2, LblPath).execute();
+                String Contact = contact.getText().toString().trim();
+                if(!Contact.isEmpty()) {
+                    String Text1 = text1.getText().toString().trim();
+                    String Text2 = text2.getText().toString().trim();
+                    String LblPath = lblPath.getText().toString().trim();
+                    new myTask(Contact, Text1, Text2, LblPath).execute();
+                }
+                else{
+
+                }
             }
         });
 
@@ -217,6 +240,11 @@ TextView lblPath;
             this.dialog.hide();
             ClearForm(aVoid);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do Here what ever you want do on back press;
     }
 
     public void SendTelegramText(String param){
